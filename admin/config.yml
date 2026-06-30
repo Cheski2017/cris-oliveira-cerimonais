@@ -1,0 +1,55 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "galeria"
+public_folder: "/galeria"
+
+locale: pt
+
+collections:
+  - name: "galeria"
+    label: "Galeria de Eventos"
+    files:
+      - name: "albuns"
+        label: "Álbuns"
+        file: "albuns.json"
+        fields:
+          - name: albuns
+            label: Álbuns
+            label_singular: "Álbum"
+            widget: list
+            summary: "{{fields.exibir_como}} — {{fields.tipo}} · {{fields.data}}"
+            fields:
+              - name: exibir_como
+                label: "Nome exibido na galeria"
+                widget: string
+                hint: "Ex: Suellen & Joel"
+              - name: titulo
+                label: "Título completo"
+                widget: string
+                hint: "Ex: Casamento Suellen & Joel"
+              - name: tipo
+                label: "Tipo de evento"
+                widget: select
+                options:
+                  - Casamento
+                  - Festa de XV Anos
+                  - Evento Corporativo
+                  - Outro
+              - name: data
+                label: "Ano"
+                widget: string
+                hint: "Ex: 2024"
+              - name: capa
+                label: "Foto de capa"
+                widget: image
+                hint: "Foto que aparece na grade da galeria"
+              - name: fotos
+                label: "Fotos do álbum"
+                widget: list
+                allow_add: true
+                field:
+                  name: foto
+                  label: "Foto"
+                  widget: image
