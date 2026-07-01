@@ -250,14 +250,14 @@ footer{background:var(--charcoal);border-top:1px solid rgba(255,255,255,0.06);pa
       <div class="about-text">
         <p class="section-eyebrow"></p>
         <h2 class="section-title">Olá...<br>Eu sou, <em>a Cris Oliveira</em><br></h2>
-        <p>Cerimonialista apaixonada por transformar momentos especiais em experiências verdadeiramente memoráveis. Cada evento é único, e é exatamente assim que trato cada cliente — com atenção exclusiva e personalizada.
+        <p id="sobre-bio1">Cerimonialista apaixonada por transformar momentos especiais em experiências verdadeiramente memoráveis. Cada evento é único, e é exatamente assim que trato cada cliente — com atenção exclusiva e personalizada.
         O cerimonial entrou em minha vida em 2024, ano em que também descobri que estava esperando o amor da minha vida, Aurora. Trabalhei por 9 anos em uma empresa, mas,
         durante a gestação, pedi a Deus que me direcionasse para uma profissão que me permitisse cuidar da minha filha e viver um propósito.
         Hoje, organizo os dias mais felizes de pessoas especiais que Ele coloca em meu caminho.</p>
-        <p>Do planejamento inicial ao último detalhe da celebração, estou presente em cada etapa para garantir que seu evento seja exatamente como você sempre sonhou.</p>
+        <p id="sobre-bio2">Do planejamento inicial ao último detalhe da celebração, estou presente em cada etapa para garantir que seu evento seja exatamente como você sempre sonhou.</p>
         <div class="about-stat">
-          <span class="stat-number">+20</span>
-          <span class="stat-label">eventos realizados com excelência</span>
+          <span class="stat-number" id="sobre-stat-numero">+20</span>
+          <span class="stat-label" id="sobre-stat-label">eventos realizados com excelência</span>
         </div>
       </div>
       <div class="about-image">
@@ -364,7 +364,7 @@ footer{background:var(--charcoal);border-top:1px solid rgba(255,255,255,0.06);pa
   <div class="section-inner">
     <p class="section-eyebrow">Depoimentos</p>
     <h2 class="section-title">O que dizem <em>nossos</em> clientes</h2>
-    <div class="testimonials-grid">
+    <div class="testimonials-grid" id="depoimentos-grid">
       <div class="testimonial">
         <span class="quote-mark">"</span>
         <p class="testimonial-text">Cris, muito obrigada por toda ajuda na organização desse sonho! Com sua tranquilidade e competência conseguiu fazer acontecer tudo da forma que queríamos! s2</p>
@@ -398,25 +398,25 @@ footer{background:var(--charcoal);border-top:1px solid rgba(255,255,255,0.06);pa
         <div class="contact-detail">
           <div>
             <p class="contact-detail-label">Telefone & WhatsApp</p>
-            <p class="contact-detail-value">(42) 98891-1363</p>
+            <p class="contact-detail-value" id="contato-telefone">(42) 98891-1363</p>
           </div>
         </div>
         <div class="contact-detail">
           <div>
             <p class="contact-detail-label">E-mail</p>
-            <p class="contact-detail-value">crisoliveiracerimonialista@gmail.com</p>
+            <p class="contact-detail-value" id="contato-email">crisoliveiracerimonialista@gmail.com</p>
           </div>
         </div>
         <div class="contact-detail">
           <div>
             <p class="contact-detail-label">Área de atendimento</p>
-            <p class="contact-detail-value">Guarapuava-PR e região</p>
+            <p class="contact-detail-value" id="contato-area">Guarapuava-PR e região</p>
           </div>
         </div>
         <div class="contact-detail">
           <div>
             <p class="contact-detail-label">Instagram</p>
-            <p class="contact-detail-value">@cerimonialistacrisoliveira</p>
+            <p class="contact-detail-value" id="contato-instagram">@cerimonialistacrisoliveira</p>
           </div>
         </div>
       </div>
@@ -609,11 +609,61 @@ function enviarWhatsApp() {
   if (whats)    texto += '📱 *Meu WhatsApp:* ' + whats + '\n';
   if (data)     texto += '📅 *Data prevista:* ' + data + '\n';
   if (mensagem) texto += '\n💬 *Detalhes:* ' + mensagem;
-  window.open('https://wa.me/5542988911363?text=' + encodeURIComponent(texto), '_blank');
+  window.open('https://wa.me/' + whatsappNumero + '?text=' + encodeURIComponent(texto), '_blank');
+}
+
+// ===== CONTEÚDO DINÂMICO =====
+var whatsappNumero = '5542988911363';
+
+function carregarConteudo() {
+  fetch('/conteudo.json')
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      var el;
+      // Sobre
+      if (data.sobre) {
+        var s = data.sobre;
+        el = document.getElementById('sobre-bio1'); if (el && s.bio1) el.textContent = s.bio1;
+        el = document.getElementById('sobre-bio2'); if (el && s.bio2) el.textContent = s.bio2;
+        el = document.getElementById('sobre-stat-numero'); if (el && s.estatistica_numero) el.textContent = s.estatistica_numero;
+        el = document.getElementById('sobre-stat-label'); if (el && s.estatistica_label) el.textContent = s.estatistica_label;
+      }
+      // Contato
+      if (data.contato) {
+        var c = data.contato;
+        el = document.getElementById('contato-telefone'); if (el && c.telefone) el.textContent = c.telefone;
+        el = document.getElementById('contato-email'); if (el && c.email) el.textContent = c.email;
+        el = document.getElementById('contato-area'); if (el && c.area) el.textContent = c.area;
+        el = document.getElementById('contato-instagram'); if (el && c.instagram) el.textContent = c.instagram;
+        if (c.whatsapp_numero) whatsappNumero = c.whatsapp_numero;
+      }
+      // Depoimentos
+      if (data.depoimentos && data.depoimentos.length) {
+        renderDepoimentos(data.depoimentos);
+      }
+    })
+    .catch(function() { /* mantém conteúdo estático como fallback */ });
+}
+
+function renderDepoimentos(deps) {
+  var grid = document.getElementById('depoimentos-grid');
+  if (!grid) return;
+  grid.innerHTML = '';
+  deps.forEach(function(dep) {
+    var div = document.createElement('div');
+    div.className = 'testimonial';
+    div.innerHTML =
+      '<span class="quote-mark">“</span>' +
+      '<p class="testimonial-text">' + dep.texto + '</p>' +
+      '<p class="testimonial-author">' + dep.autor + '</p>' +
+      '<p class="testimonial-event">' + dep.evento + '</p>';
+    grid.appendChild(div);
+  });
 }
 
 // ===== INICIALIZAÇÃO =====
 carregarAlbuns();
+carregarConteudo();
 </script>
 
 </body>
