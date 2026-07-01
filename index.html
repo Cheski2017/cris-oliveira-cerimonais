@@ -487,6 +487,11 @@ function fecharMenu() {
 
 // ===== GALERIA DINÂMICA =====
 var albumAtual = { fotos: [], indice: 0, titulo: '', meta: '' };
+var albumPlaceholder = '<div class="album-thumb-placeholder"><svg viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="30" stroke="#8B7355" stroke-width="0.5"/><text x="50" y="75" font-family="serif" font-size="8" fill="#8B7355" text-anchor="middle">evento</text></svg></div>';
+
+function albumImgErro(img) {
+  img.parentElement.innerHTML = albumPlaceholder;
+}
 
 function carregarAlbuns() {
   fetch('/albuns.json')
@@ -502,8 +507,6 @@ function renderAlbuns(albuns) {
   var grid = document.getElementById('albumsGrid');
   grid.innerHTML = '';
 
-  var placeholder = '<div class="album-thumb-placeholder"><svg viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="30" stroke="#8B7355" stroke-width="0.5"/><text x="50" y="75" font-family="serif" font-size="8" fill="#8B7355" text-anchor="middle">evento</text></svg></div>';
-
   albuns.forEach(function(album) {
     var fotosStr = album.fotos.join(',');
 
@@ -515,18 +518,24 @@ function renderAlbuns(albuns) {
     card.setAttribute('data-fotos', fotosStr);
     card.onclick = function() { abrirAlbum(this); };
 
-    card.innerHTML =
-      '<div class="album-thumb">' +
-        '<img src="' + album.capa + '" alt="' + (album.exibir_como || album.titulo) + '" ' +
-             'onerror="this.parentElement.innerHTML=\'' + placeholder.replace(/'/g, "\\'") + '\'">' +
-        '<div class="album-overlay"></div>' +
-        '<span class="album-ver">Ver álbum →</span>' +
-      '</div>' +
-      '<div class="album-info">' +
-        '<p class="album-titulo">' + (album.exibir_como || album.titulo) + '</p>' +
-        '<p class="album-meta">' + album.tipo + ' · ' + album.data + '</p>' +
-      '</div>';
+    var img = document.createElement('img');
+    img.src = album.capa;
+    img.alt = album.exibir_como || album.titulo;
+    img.onerror = function() { albumImgErro(this); };
 
+    var thumb = document.createElement('div');
+    thumb.className = 'album-thumb';
+    thumb.appendChild(img);
+    thumb.innerHTML += '<div class="album-overlay"></div><span class="album-ver">Ver álbum →</span>';
+
+    var info = document.createElement('div');
+    info.className = 'album-info';
+    info.innerHTML =
+      '<p class="album-titulo">' + (album.exibir_como || album.titulo) + '</p>' +
+      '<p class="album-meta">' + album.tipo + ' · ' + album.data + '</p>';
+
+    card.appendChild(thumb);
+    card.appendChild(info);
     grid.appendChild(card);
   });
 }
