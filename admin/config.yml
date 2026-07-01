@@ -24,11 +24,11 @@ collections:
               - name: exibir_como
                 label: "Nome exibido na galeria"
                 widget: string
-                hint: "Ex: Suellen & Joel"
+                hint: "Ex: Suelen & Joel"
               - name: titulo
                 label: "Título completo"
                 widget: string
-                hint: "Ex: Casamento Suellen & Joel"
+                hint: "Ex: Casamento Suelen & Joel"
               - name: tipo
                 label: "Tipo de evento"
                 widget: select
@@ -53,3 +53,69 @@ collections:
                   name: foto
                   label: "Foto"
                   widget: image
+
+  - name: "textos"
+    label: "Textos do Site"
+    files:
+      - name: "conteudo"
+        label: "Editar Textos"
+        file: "conteudo.json"
+        fields:
+          - name: contato
+            label: "Informações de Contato"
+            widget: object
+            fields:
+              - name: telefone
+                label: "Telefone & WhatsApp (exibido no site)"
+                widget: string
+                hint: "Ex: (42) 98891-1363"
+              - name: whatsapp_numero
+                label: "Número WhatsApp (só números, com DDI+DDD)"
+                widget: string
+                hint: "Ex: 5542988911363 — usado no botão de envio"
+              - name: email
+                label: "E-mail"
+                widget: string
+              - name: area
+                label: "Área de atendimento"
+                widget: string
+                hint: "Ex: Guarapuava-PR e região"
+              - name: instagram
+                label: "Instagram (com @)"
+                widget: string
+                hint: "Ex: @cerimonialistacrisoliveira"
+          - name: sobre
+            label: "Seção Sobre"
+            widget: object
+            fields:
+              - name: bio1
+                label: "Parágrafo 1 — bio principal"
+                widget: text
+              - name: bio2
+                label: "Parágrafo 2 — fechamento"
+                widget: text
+              - name: estatistica_numero
+                label: "Número de eventos"
+                widget: string
+                hint: "Ex: +20"
+              - name: estatistica_label
+                label: "Descrição da estatística"
+                widget: string
+                hint: "Ex: eventos realizados com excelência"
+          - name: depoimentos
+            label: "Depoimentos"
+            widget: list
+            label_singular: "Depoimento"
+            summary: "{{fields.autor}} — {{fields.evento}}"
+            fields:
+              - name: texto
+                label: "Texto do depoimento"
+                widget: text
+              - name: autor
+                label: "Nome"
+                widget: string
+                hint: "Ex: Noiva Patrícia"
+              - name: evento
+                label: "Tipo e ano"
+                widget: string
+                hint: "Ex: Casamento · 2026"
