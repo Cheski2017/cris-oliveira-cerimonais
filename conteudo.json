@@ -1,0 +1,32 @@
+{
+  "contato": {
+    "telefone": "(42) 98891-1363",
+    "whatsapp_numero": "5542988911363",
+    "email": "crisoliveiracerimonialista@gmail.com",
+    "area": "Guarapuava-PR e região",
+    "instagram": "@cerimonialistacrisoliveira"
+  },
+  "sobre": {
+    "bio1": "Cerimonialista apaixonada por transformar momentos especiais em experiências verdadeiramente memoráveis. Cada evento é único, e é exatamente assim que trato cada cliente — com atenção exclusiva e personalizada. O cerimonial entrou em minha vida em 2024, ano em que também descobri que estava esperando o amor da minha vida, Aurora. Trabalhei por 9 anos em uma empresa, mas, durante a gestação, pedi a Deus que me direcionasse para uma profissão que me permitisse cuidar da minha filha e viver um propósito. Hoje, organizo os dias mais felizes de pessoas especiais que Ele coloca em meu caminho.",
+    "bio2": "Do planejamento inicial ao último detalhe da celebração, estou presente em cada etapa para garantir que seu evento seja exatamente como você sempre sonhou.",
+    "estatistica_numero": "+20",
+    "estatistica_label": "eventos realizados com excelência"
+  },
+  "depoimentos": [
+    {
+      "texto": "Cris, muito obrigada por toda ajuda na organização desse sonho! Com sua tranquilidade e competência conseguiu fazer acontecer tudo da forma que queríamos! s2",
+      "autor": "Noiva Patrícia",
+      "evento": "Casamento · 2026"
+    },
+    {
+      "texto": "Oi, Cris obrigada por tudo, do fundo do meu coração s2 você é adorável. Tive a sorte que indicaram você, tem um carisma incrível. Foi perfeito.",
+      "autor": "Debutante Ana",
+      "evento": "XV Anos · 2026"
+    },
+    {
+      "texto": "Obrigada Cris! Foi incrível! Te agradecemos por todo cuidado, paciência e o profissionalismo com a sua equipe! Deus abençoe!",
+      "autor": "Noiva Jacqueline",
+      "evento": "Casamento · 2026"
+    }
+  ]
+}
