@@ -43,6 +43,18 @@
         "/galeria/rafaela-cesar/foto3.jpeg",
         "/galeria/rafaela-cesar/foto4.jpeg"
       ]
+    },
+    {
+      "exibir_como": "Jacqueline & Matheus",
+      "titulo": "Casamento Jacqueline & Matheus",
+      "tipo": "Casamento",
+      "data": "2026",
+      "capa": "/galeria/capa.jpeg",
+      "fotos": [
+        "/galeria/foto1.jpeg",
+        "/galeria/foto2.jpeg",
+        "/galeria/foto3.jpeg"
+      ]
     }
   ]
 }
