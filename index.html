@@ -664,18 +664,47 @@ function renderDepoimentos(deps) {
   deps.forEach(function(dep) {
     var div = document.createElement('div');
     div.className = 'testimonial';
-    var mediaHtml = '';
+
+    var quoteSpan = document.createElement('span');
+    quoteSpan.className = 'quote-mark';
+    quoteSpan.textContent = '"';
+    div.appendChild(quoteSpan);
+
+    var textoP = document.createElement('p');
+    textoP.className = 'testimonial-text';
+    textoP.textContent = dep.texto;
+    div.appendChild(textoP);
+
     if (dep.video) {
-      mediaHtml = '<video controls class=”testimonial-video”><source src=”' + dep.video + '”>Seu navegador não suporta vídeo.</video>';
+      var videoEl = document.createElement('video');
+      videoEl.controls = true;
+      videoEl.className = 'testimonial-video';
+      videoEl.setAttribute('playsinline', '');
+      var vSource = document.createElement('source');
+      vSource.src = dep.video;
+      vSource.type = 'video/mp4';
+      videoEl.appendChild(vSource);
+      div.appendChild(videoEl);
     } else if (dep.audio) {
-      mediaHtml = '<audio controls class=”testimonial-audio”><source src=”' + dep.audio + '”>Seu navegador não suporta áudio.</audio>';
+      var audioEl = document.createElement('audio');
+      audioEl.controls = true;
+      audioEl.className = 'testimonial-audio';
+      var aSource = document.createElement('source');
+      aSource.src = dep.audio;
+      audioEl.appendChild(aSource);
+      div.appendChild(audioEl);
     }
-    div.innerHTML =
-      '<span class=”quote-mark”>”</span>' +
-      '<p class=”testimonial-text”>' + dep.texto + '</p>' +
-      mediaHtml +
-      '<p class=”testimonial-author”>' + dep.autor + '</p>' +
-      '<p class=”testimonial-event”>' + dep.evento + '</p>';
+
+    var autorP = document.createElement('p');
+    autorP.className = 'testimonial-author';
+    autorP.textContent = dep.autor;
+    div.appendChild(autorP);
+
+    var eventoP = document.createElement('p');
+    eventoP.className = 'testimonial-event';
+    eventoP.textContent = dep.evento;
+    div.appendChild(eventoP);
+
     grid.appendChild(div);
   });
 }
