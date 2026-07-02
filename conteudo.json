@@ -14,19 +14,23 @@
   },
   "depoimentos": [
     {
-      "texto": "Cris, muito obrigada por toda ajuda na organização desse sonho! Com sua tranquilidade e competência conseguiu fazer acontecer tudo da forma que queríamos! ❤️",
+      "texto": "Cris, muito obrigada por toda ajuda na organização desse sonho! Com sua tranquilidade e competência conseguiu fazer acontecer tudo da forma que queríamos!",
       "autor": "Noiva Patrícia",
-      "evento": "Casamento · 2026"
+      "evento": "Casamento · 2026",
+      "audio": ""
     },
     {
-      "texto": "Oi, Cris obrigada por tudo, do fundo do meu coração s2 você é adorável. Tive a sorte que indicaram você, tem um carisma incrível. Foi perfeito.",
+      "texto": "Oi, Cris obrigada por tudo, do fundo do meu coração, você é adorável. Tive a sorte que indicaram você, tem um carisma incrível. Foi perfeito.",
       "autor": "Debutante Ana",
-      "evento": "XV Anos · 2026"
+      "evento": "XV Anos · 2026",
+      "audio": ""
     },
     {
       "texto": "Obrigada Cris! Foi incrível! Te agradecemos por todo cuidado, paciência e o profissionalismo com a sua equipe! Deus abençoe!",
       "autor": "Noiva Jacqueline",
-      "evento": "Casamento · 2026"
+      "evento": "Casamento · 2026",
+      "audio": ""
     }
   ]
 }
+
