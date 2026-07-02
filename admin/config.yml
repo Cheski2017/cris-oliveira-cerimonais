@@ -126,3 +126,10 @@ collections:
                 media_folder: "audio"
                 public_folder: "/audio"
                 hint: "Arquivo .mp3 ou .m4a — aparece como player de áudio abaixo do texto"
+              - name: video
+                label: "Vídeo do depoimento (opcional)"
+                widget: file
+                required: false
+                media_folder: "video"
+                public_folder: "/video"
+                hint: "Arquivo .mp4 — se preenchido, exibe player de vídeo (tem prioridade sobre o áudio)"
