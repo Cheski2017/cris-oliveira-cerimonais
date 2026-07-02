@@ -119,3 +119,10 @@ collections:
                 label: "Tipo e ano"
                 widget: string
                 hint: "Ex: Casamento · 2026"
+              - name: audio
+                label: "Áudio do depoimento (opcional)"
+                widget: file
+                required: false
+                media_folder: "audio"
+                public_folder: "/audio"
+                hint: "Arquivo .mp3 ou .m4a — aparece como player de áudio abaixo do texto"
