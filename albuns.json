@@ -1,37 +1,6 @@
 {
   "albuns": [
     {
-      "titulo": "Casamento Suelen & Joel",
-      "exibir_como": "Suelen & Joel",
-      "tipo": "Casamento",
-      "data": "2024",
-      "capa": "/galeria/suelen-joel/capa.jpeg",
-      "fotos": [
-        "/galeria/suelen-joel/foto1.jpeg",
-        "/galeria/suelen-joel/foto2.jpeg",
-        "/galeria/suelen-joel/foto3.jpeg"
-      ]
-    },
-    {
-      "titulo": "Casamento Maria & Guilherme",
-      "exibir_como": "Maria & Guilherme",
-      "tipo": "Casamento",
-      "data": "2024",
-      "capa": "/galeria/maria-guilherme/capa.jpeg",
-      "fotos": []
-    },
-    {
-      "titulo": "Casamento Katiara & Tiago",
-      "exibir_como": "Katiara & Tiago",
-      "tipo": "Casamento",
-      "data": "2024",
-      "capa": "/galeria/katiara-tiago/capa.JPG",
-      "fotos": [
-        "/galeria/katiara-tiago/foto1.jpeg",
-        "/galeria/katiara-tiago/foto2.jpeg"
-      ]
-    },
-    {
       "titulo": "Casamento Rafaela & Cesar",
       "exibir_como": "Rafaela & Cesar",
       "tipo": "Casamento",
@@ -66,6 +35,37 @@
         "/galeria/whatsapp-image-2026-07-02-at-15.45.21-2-.jpeg",
         "/galeria/whatsapp-image-2026-07-02-at-15.45.21-1-.jpeg",
         "/galeria/whatsapp-image-2026-07-02-at-15.45.22.jpeg"
+      ]
+    },
+    {
+      "titulo": "Casamento Katiara & Tiago",
+      "exibir_como": "Katiara & Tiago",
+      "tipo": "Casamento",
+      "data": "2024",
+      "capa": "/galeria/katiara-tiago/capa.JPG",
+      "fotos": [
+        "/galeria/katiara-tiago/foto1.jpeg",
+        "/galeria/katiara-tiago/foto2.jpeg"
+      ]
+    },
+    {
+      "titulo": "Casamento Maria & Guilherme",
+      "exibir_como": "Maria & Guilherme",
+      "tipo": "Casamento",
+      "data": "2024",
+      "capa": "/galeria/maria-guilherme/capa.jpeg",
+      "fotos": []
+    },
+    {
+      "titulo": "Casamento Suelen & Joel",
+      "exibir_como": "Suelen & Joel",
+      "tipo": "Casamento",
+      "data": "2024",
+      "capa": "/galeria/suelen-joel/capa.jpeg",
+      "fotos": [
+        "/galeria/suelen-joel/foto1.jpeg",
+        "/galeria/suelen-joel/foto2.jpeg",
+        "/galeria/suelen-joel/foto3.jpeg"
       ]
     }
   ]
