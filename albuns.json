@@ -55,6 +55,18 @@
         "/galeria/foto2.jpeg",
         "/galeria/foto3.jpeg"
       ]
+    },
+    {
+      "data": "2026",
+      "exibir_como": "Joice & Emanuel",
+      "titulo": "Casamento Joice & Emanuel",
+      "tipo": "Casamento",
+      "capa": "/galeria/whatsapp-image-2026-07-02-at-15.45.24-3-.jpeg",
+      "fotos": [
+        "/galeria/whatsapp-image-2026-07-02-at-15.45.21-2-.jpeg",
+        "/galeria/whatsapp-image-2026-07-02-at-15.45.21-1-.jpeg",
+        "/galeria/whatsapp-image-2026-07-02-at-15.45.22.jpeg"
+      ]
     }
   ]
 }
