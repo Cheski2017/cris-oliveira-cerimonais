@@ -122,6 +122,8 @@ section{padding:100px 8%}
 .testimonial-text{font-family:'Cormorant Garamond',serif;font-size:17px;font-style:italic;color:var(--charcoal);line-height:1.7;margin-bottom:24px}
 .testimonial-author{font-size:12px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--mid)}
 .testimonial-event{font-size:11px;color:var(--light);margin-top:2px}
+.testimonial-audio{width:100%;margin:16px 0 8px;accent-color:var(--accent);border-radius:4px;outline:none}
+.testimonial-audio::-webkit-media-controls-panel{background:var(--accent-light)}
 
 .contact{background:var(--charcoal)}
 .contact .section-title{color:var(--warm-white)}
@@ -661,11 +663,16 @@ function renderDepoimentos(deps) {
   deps.forEach(function(dep) {
     var div = document.createElement('div');
     div.className = 'testimonial';
+    var audioHtml = '';
+    if (dep.audio) {
+      audioHtml = '<audio controls class=”testimonial-audio”><source src=”' + dep.audio + '”>Seu navegador não suporta áudio.</audio>';
+    }
     div.innerHTML =
-      '<span class="quote-mark">“</span>' +
-      '<p class="testimonial-text">' + dep.texto + '</p>' +
-      '<p class="testimonial-author">' + dep.autor + '</p>' +
-      '<p class="testimonial-event">' + dep.evento + '</p>';
+      '<span class=”quote-mark”>”</span>' +
+      '<p class=”testimonial-text”>' + dep.texto + '</p>' +
+      audioHtml +
+      '<p class=”testimonial-author”>' + dep.autor + '</p>' +
+      '<p class=”testimonial-event”>' + dep.evento + '</p>';
     grid.appendChild(div);
   });
 }
