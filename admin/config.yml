@@ -2,7 +2,7 @@ backend:
   name: github
   repo: Cheski2017/cris-oliveira-cerimoniais
   branch: main
-  
+
 media_folder: "galeria"
 public_folder: "/galeria"
 
