@@ -67,6 +67,19 @@
         "/galeria/suelen-joel/foto2.jpeg",
         "/galeria/suelen-joel/foto3.jpeg"
       ]
+    },
+    {
+      "exibir_como": "Maria & Lemuel",
+      "titulo": "Casamento Maria & Lemuel",
+      "tipo": "Casamento",
+      "data": "2026",
+      "capa": "/galeria/whatsapp-image-2026-06-30-at-23.31.10.jpeg",
+      "fotos": [
+        "/galeria/whatsapp-image-2026-06-30-at-23.31.09.jpeg",
+        "/galeria/whatsapp-image-2026-06-30-at-23.31.09-1-.jpeg",
+        "/galeria/whatsapp-image-2026-06-30-at-23.31.10-1-.jpeg",
+        "/galeria/whatsapp-image-2026-06-30-at-23.31.10-3-.jpeg"
+      ]
     }
   ]
 }
