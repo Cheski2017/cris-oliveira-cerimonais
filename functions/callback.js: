@@ -1,0 +1,26 @@
+export async function onRequest(context) {
+  const url = new URL(context.request.url);
+  const code = url.searchParams.get('code');
+  const tokenResponse = await fetch('https://github.com/login/oauth/access_token', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify({
+      client_id: context.env.GITHUB_CLIENT_ID,
+      client_secret: context.env.GITHUB_CLIENT_SECRET,
+      code
+    }),
+  });
+  const { access_token } = await tokenResponse.json();
+  return new Response(
+    `<!DOCTYPE html><html><body><script>
+(function(){
+  function receiveMessage(e){
+    window.opener.postMessage('authorization:github:success:{"token":"${access_token}","provider":"github"}',e.origin);
+  }
+  window.addEventListener("message",receiveMessage,false);
+  window.opener.postMessage("authorizing:github","*");
+})();
+</script><p>Autorizando...</p></body></html>`,
+    { headers: { 'Content-Type': 'text/html' } }
+  );
+}
