@@ -1,6 +1,6 @@
 backend:
      name: github
-     repo: Cheski2017/cris-oliveira-cerimoniais
+     repo: Cheski2017/cris-oliveira-cerimonais
      branch: main
      base_url: https://cris-oliveira-cerimonais.pages.dev
 
