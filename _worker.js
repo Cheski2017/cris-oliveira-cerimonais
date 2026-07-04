@@ -26,6 +26,13 @@ export default {
         const data = await tokenResponse.json();
         const access_token = data.access_token || '';
 
+        if (!access_token) {
+          return new Response(
+            `ERRO - Secret disponível: ${!!env.GITHUB_CLIENT_SECRET}\nResposta GitHub: ${JSON.stringify(data)}`,
+            { status: 200, headers: { 'Content-Type': 'text/plain' } }
+          );
+        }
+
         return new Response(
           `<!DOCTYPE html><html><body><script>
 (function(){
