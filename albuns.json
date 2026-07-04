@@ -1,8 +1,8 @@
 {
   "albuns": [
     {
-      "titulo": "Casamento Rafaela & Cesar",
       "exibir_como": "Rafaela & Cesar",
+      "titulo": "Casamento Rafaela & Cesar",
       "tipo": "Casamento",
       "data": "2026",
       "capa": "/galeria/rafaela-cesar/capa.jpeg",
@@ -26,10 +26,10 @@
       ]
     },
     {
-      "data": "2025",
       "exibir_como": "Joice & Emanuel",
       "titulo": "Casamento Joice & Emanuel",
       "tipo": "Casamento",
+      "data": "2025",
       "capa": "/galeria/whatsapp-image-2026-07-02-at-15.45.24-3-.jpeg",
       "fotos": [
         "/galeria/whatsapp-image-2026-07-02-at-15.45.21-2-.jpeg",
@@ -38,8 +38,8 @@
       ]
     },
     {
-      "titulo": "Casamento Katiara & Tiago",
       "exibir_como": "Katiara & Tiago",
+      "titulo": "Casamento Katiara & Tiago",
       "tipo": "Casamento",
       "data": "2024",
       "capa": "/galeria/katiara-tiago/capa.JPG",
@@ -49,16 +49,8 @@
       ]
     },
     {
-      "titulo": "Casamento Maria & Guilherme",
-      "exibir_como": "Maria & Guilherme",
-      "tipo": "Casamento",
-      "data": "2024",
-      "capa": "/galeria/maria-guilherme/capa.jpeg",
-      "fotos": []
-    },
-    {
-      "titulo": "Casamento Suelen & Joel",
       "exibir_como": "Suelen & Joel",
+      "titulo": "Casamento Suelen & Joel",
       "tipo": "Casamento",
       "data": "2024",
       "capa": "/galeria/suelen-joel/capa.jpeg",
@@ -79,6 +71,21 @@
         "/galeria/whatsapp-image-2026-06-30-at-23.31.09-1-.jpeg",
         "/galeria/whatsapp-image-2026-06-30-at-23.31.10-1-.jpeg",
         "/galeria/whatsapp-image-2026-06-30-at-23.31.10-3-.jpeg"
+      ]
+    },
+    {
+      "exibir_como": "Mayara - Debutante",
+      "titulo": "XV Anos Mayara",
+      "tipo": "Festa de XV Anos",
+      "data": "2026",
+      "capa": "/galeria/WhatsApp Image 2026-07-03 at 23.24.10 (1).jpeg",
+      "fotos": [
+        "/galeria/WhatsApp Image 2026-07-03 at 23.24.10 (1).jpeg",
+        "/galeria/WhatsApp Image 2026-07-03 at 23.24.10 (2).jpeg",
+        "/galeria/WhatsApp Image 2026-07-03 at 23.24.10 (3).jpeg",
+        "/galeria/WhatsApp Image 2026-07-03 at 23.24.10.jpeg",
+        "/galeria/WhatsApp Image 2026-07-03 at 23.24.11 (1).jpeg",
+        "/galeria/WhatsApp Image 2026-07-03 at 23.24.11.jpeg"
       ]
     }
   ]
