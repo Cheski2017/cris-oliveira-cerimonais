@@ -12,29 +12,19 @@ export default {
     }
 
     if (url.pathname === '/callback') {
-      try {
-        const code = url.searchParams.get('code');
-        const tokenResponse = await fetch('https://github.com/login/oauth/access_token', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-          body: JSON.stringify({
-            client_id: CLIENT_ID,
-            client_secret: env.GITHUB_CLIENT_SECRET,
-            code
-          }),
-        });
-        const data = await tokenResponse.json();
-        const access_token = data.access_token || '';
-
-        if (!access_token) {
-          return new Response(
-            `ERRO - Secret disponível: ${!!env.GITHUB_CLIENT_SECRET}\nResposta GitHub: ${JSON.stringify(data)}`,
-            { status: 200, headers: { 'Content-Type': 'text/plain' } }
-          );
-        }
-
-        return new Response(
-          `<!DOCTYPE html><html><body><script>
+      const code = url.searchParams.get('code');
+      const tokenResponse = await fetch('https://github.com/login/oauth/access_token', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          client_id: CLIENT_ID,
+          client_secret: env.GITHUB_CLIENT_SECRET,
+          code
+        }),
+      });
+      const { access_token } = await tokenResponse.json();
+      return new Response(
+        `<!DOCTYPE html><html><body><script>
 (function(){
   function receiveMessage(e){
     window.opener.postMessage('authorization:github:success:{"token":"${access_token}","provider":"github"}',e.origin);
@@ -43,11 +33,8 @@ export default {
   window.opener.postMessage("authorizing:github","*");
 })();
 </script><p>Autorizando...</p></body></html>`,
-          { headers: { 'Content-Type': 'text/html' } }
-        );
-      } catch (err) {
-        return new Response('Erro: ' + err.message, { status: 500 });
-      }
+        { headers: { 'Content-Type': 'text/html' } }
+      );
     }
 
     return env.ASSETS.fetch(request);
