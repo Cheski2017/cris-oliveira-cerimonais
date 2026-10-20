@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#367fc9">
+  <meta name="description" content="Um convite especial para celebrar meus 15 anos. 19 de dezembro de 2026, às 19h30, na Associação do Cruzeiro.">
+  <title>15 anos da Laura · 19 de dezembro de 2026</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='50' fill='%23367fc9'/%3E%3Ctext x='50' y='66' text-anchor='middle' font-size='52' fill='white'%3E15%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="cover" id="cover">
+    <div class="cover-copy"><span class="eyebrow">AZUL, PRATA & MUITAS MEMÓRIAS</span><h1>Um convite.<br>Uma noite<br><em>especial.</em></h1><p>Meus 15 anos estão chegando.<br>E eu quero você comigo.</p><span class="cover-date">19 DEZEMBRO · 2026</span></div>
+    <div class="cover-art"><img src="assets/capa-sem-play.png" width="1080" height="1920" alt="Envelope azul com selo prateado, estrelas e confetes. Clique para abrir o convite."><button class="envelope-hit" id="open-invite" aria-label="Clique para abrir o convite e tocar a música"><span class="sr-only">Clique para abrir</span></button><p class="cover-hint">TOQUE NO ENVELOPE PARA ABRIR <span>♪ com música</span></p></div>
+  </div>
+
+  <main id="invite" inert aria-hidden="true">
+    <header class="topbar"><a class="wordmark" href="#inicio" aria-label="Meus 15 anos, início">meus <span>15</span></a><a href="#detalhes" class="top-link">19.12.26 <span>↗</span></a><button id="music-toggle" class="music-toggle" aria-label="Tocar música" aria-pressed="false"><span class="sound-bars" aria-hidden="true"><i></i><i></i><i></i></span><span id="music-label">Ouvir música</span></button></header>
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <div class="poster"><img src="assets/convite-19-dezembro.png" width="1080" height="1920" alt="Arte original do convite de 15 anos: fotografia de infância, balão prateado de 15 anos, detalhes azuis e a data da festa."><span class="poster-stamp" aria-hidden="true">uma nova<br><b>fase</b> ✧</span></div>
+      <div class="hero-copy"><span class="eyebrow">CAPÍTULO 15 · VAMOS CELEBRAR?</span><h2 id="hero-title">Um brinde<br>às histórias<br>que <em>vêm aí.</em></h2><p class="intro">Entre lembranças de infância e sonhos para o futuro, chegou a hora de celebrar meus 15 anos. Sua presença vai deixar essa noite ainda mais especial.</p>
+        <div class="event-details" id="detalhes"><div><span>QUANDO</span><strong>19 de dezembro</strong><p>Sábado, 2026 · às 19h30</p></div><div><span>ONDE</span><strong>Associação do Cruzeiro</strong><a href="https://share.google/vzIZTTGtmQfFnI5so" target="_blank" rel="noopener noreferrer">Ver como chegar <span aria-hidden="true">↗</span></a></div></div>
+        <a class="button button-primary" href="https://wa.me/5542988911363?text=Ol%C3%A1%21%20Quero%20confirmar%20minha%20presen%C3%A7a%20na%20festa%20de%2015%20anos%20do%20dia%2019%2F12%2F2026." target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M21 11.5a9 9 0 0 1-13.2 8L3 21l1.5-4.8A9 9 0 1 1 21 11.5Z"/><path d="M8 7c-2 4 5 10 8 8l-2-2-2 1-3-3 1-2Z"/></svg>Confirmar presença<span aria-hidden="true">↗</span></a><p class="small-note">A confirmação abre uma conversa no WhatsApp.</p>
+      </div>
+    </section>
+
+    <section class="extras" aria-label="Presentes e música">
+      <div class="gifts"><span class="eyebrow">UM CARINHO A MAIS</span><h2>Sua presença<br>é o <em>melhor presente.</em></h2><p>Se quiser me presentear, deixei algumas ideias para ajudar na escolha.</p><button class="gift-toggle" id="gift-toggle" aria-expanded="false" aria-controls="gift-list"><span>Ver lista de presentes</span><span class="gift-plus" aria-hidden="true">+</span></button><div id="gift-list" hidden><ul><li><span>01</span><div><strong>Crocs</strong><p>Número 36.</p></div></li><li><span>02</span><div><strong>O Boticário</strong><p>Perfumes e maquiagem.</p></div></li><li><span>03</span><div><strong>Joias em prata</strong><p>Pulseiras, berloques, anéis e colar.</p></div></li><li><span>04</span><div><strong>Roupas de verão</strong><p>Shorts 36 e blusinhas cropped P.</p></div></li><li><span>05</span><div><strong>Calça jeans</strong><p>Número 36, modelo wide leg.</p></div></li></ul></div></div>
+      <div class="soundtrack"><span class="eyebrow">A TRILHA DESSE MOMENTO</span><h2>A Thousand Years</h2><p>Christina Perri</p><div class="audio-card"><span class="audio-card-mark" aria-hidden="true">♪</span><p>Uma música para guardar<br>esse momento.</p><audio id="invitation-audio" controls preload="auto" loop aria-label="A Thousand Years, de Christina Perri"><source src="assets/a-thousand-years.mp3" type="audio/mpeg">Seu navegador não oferece suporte à reprodução de áudio.</audio></div><p class="playback-status" id="playback-status" role="status" aria-live="polite">A música começa ao abrir o convite. Você pode pausar e continuar quando quiser.</p><a class="youtube-link" href="https://www.youtube.com/watch?v=rtOvBOTyX00" target="_blank" rel="noopener noreferrer">Ver clipe no YouTube ↗</a></div>
+    </section>
+    <footer><span>19.12.26 · 19H30</span><p>Te espero para celebrar comigo! <span aria-hidden="true">✧</span></p><button id="reopen" aria-label="Voltar à capa do convite">Ver o envelope novamente ↗</button></footer>
+  </main>
+  <noscript><p class="noscript">Para abrir a versão interativa, ative o JavaScript no navegador. <a href="https://wa.me/5542988911363">Confirme sua presença pelo WhatsApp.</a></p></noscript>
+</body>
+</html>
